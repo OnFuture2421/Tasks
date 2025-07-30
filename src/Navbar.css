@@ -1,0 +1,49 @@
+.Navbar {
+  background: darkviolet;
+  padding: 1rem;
+  border-radius: 30px 30px 30px 30px;
+  margin: 1rem;
+  justify-content: center;
+  display: flex;
+  border: 4px solid black;
+  
+}
+
+.navbar li {
+  margin-right: 2rem;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 0.25em 0.75em;
+  transition: background 0.2s;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+  background: #a259d9;
+}
+
+.textIntro {
+  font-size: xxx-large;
+  text-align: center;
+  margin: 1rem 0;
+}
+.background {
+  background: gray;
+  padding: 1rem;
+  border-radius: 8px;
+  color:white !important;
+}
+nav::-webkit-scrollbar {
+  display: none;
+}
+.border {
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem;
+}
