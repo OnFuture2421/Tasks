@@ -1,27 +1,33 @@
-import { Link } from 'react-router-dom';
-import './Navbar.css';
-import './pages/CodeUI.css';
+import React from "react";
+import { Link } from "react-router-dom";
 
-const Navbar = () => (
-  <nav className='Navbar'>
-    <ul style={{ display: 'flex', listStyle: 'none', margin: 0, padding: 0 }}>
-      <li style={{ marginRight: '2rem' }}>
-        <Link className="btn btn-danger Border fontClass" to="/home" style={{ color: 'white', textDecoration: 'none', fontWeight: 'bold'}}>Home</Link>
-      </li>
-      <li style={{ marginRight: '2rem' }}>
-        <Link className="btn btn-warning Border fontClass" to="/inline" style={{ color: 'white', textDecoration: 'none', fontWeight: 'bold' }}>CSS inline</Link>
-      </li>
-      <li style={{ marginRight: '2rem' }}>
-        <Link className="btn btn-info Border fontClass" to="/internal" style={{ color: 'white', textDecoration: 'none', fontWeight: 'bold' }}>CSS internal</Link>
-      </li>
-      <li style={{ marginRight: '2rem' }}>
-        <Link className="btn btn-success Border fontClass" to="/external" style={{ color: 'white', textDecoration: 'none', fontWeight: 'bold' }}>CSS external</Link>
-      </li>
-      <li style={{ marginRight: '2rem' }}>
-        <Link className="btn btn-primary Border fontClass" to="/about" style={{ color: 'white', textDecoration: 'none', fontWeight: 'bold' }}>About me</Link>
-      </li>
-    </ul>
-  </nav>
-);
+export default function Navbar({ darkMode, toggleDarkMode }) {
+  return (
+    <nav className="flex justify-between items-center p-4 bg-gray-200 dark:bg-gray-800 transition-colors">
+      {/* Left: Buttons */}
+      <div className="flex items-center space-x-4">
+        <Link
+          to="/home"
+          className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
+        >
+          Tasks
+        </Link>
+        <Link
+          to="/about"
+          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+        >
+          About me
+        </Link>
+        <button
+          onClick={toggleDarkMode}
+          className="px-4 py-2 rounded border border-cyan-400 font-bold dark:border-yellow-400 dark:bg-black dark:text-white"
+        >
+          {darkMode ? "Light Mode" : "Dark Mode"}
+        </button>
+      </div>
 
-export default Navbar;
+      {/* Right: Title */}
+      <h1 className="font-bold text-lg dark:text-white">Tasks</h1>
+    </nav>
+  );
+}

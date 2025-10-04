@@ -1,20 +1,10 @@
-import React from 'react'
-
-const About = () => {
+export default function Home() {
   return (
-    <div>
-      <>
-      <h1 className='textIntro'>About me!</h1>
-      <p>Hello, It's me, Eyad. The developer of this website. This website uses React, It took a while for me to setup and to feed it information. Anyways, Enjoy! -Sincerly, Eyad.</p>
-      
-      
-      
-      
-      
-      
-      </>
+    <div className="p-8">
+      <h2 className="text-2xl font-bold">Home Page</h2>
+      <p className="mt-2 text-gray-700 dark:text-gray-300">
+        Welcome to the dark/light mode demo with Vite + Tailwind!
+      </p>
     </div>
-  )
+  );
 }
-
-export default About

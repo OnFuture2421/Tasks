@@ -1,4 +1,8 @@
-/* index.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Optional: smooth transitions for background/text */
+body {
+  @apply transition-colors duration-300;
+}

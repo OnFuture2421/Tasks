@@ -1,34 +1,36 @@
-import React from 'react';
-import Navbar from './Navbar.jsx';
-import Home from './pages/Home.jsx';
-import Inline from './pages/Inline.jsx'; 
-import Internal from './pages/Internal.jsx';
-import External from './pages/External.jsx';
-import About from './pages/About.jsx'; 
-import 'bootstrap/dist/css/bootstrap.css'
+import React, { useState, useEffect } from "react";
+import Navbar from "./Navbar.jsx";
+import Home from "./pages/Home.jsx";
+import About from "./pages/About.jsx";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 
-import {
-  HashRouter as Router,
-  Routes,
-  Route,
-} from 'react-router-dom';
+export default function App() {
+  const [darkMode, setDarkMode] = useState(false);
 
-const App = () => {
+  useEffect(() => {
+    const saved = localStorage.getItem("darkMode") === "true";
+    setDarkMode(saved);
+  }, []);
+
+  const toggleDarkMode = () => {
+    setDarkMode(prev => {
+      localStorage.setItem("darkMode", !prev);
+      return !prev;
+    });
+  };
+
   return (
     <Router>
-      <div>
-        <Navbar />
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/inline" element={<Inline />} />
-          <Route path="/internal" element={<Internal />} />
-          <Route path="/external" element={<External />} />
-          <Route path="/about" element={<About />} />
-        </Routes>
+      <div className={darkMode ? "dark" : ""}>
+        <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-all">
+          <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/about" element={<About />} />
+          </Routes>
+        </div>
       </div>
     </Router>
   );
-};
-
-export default App;
+}
