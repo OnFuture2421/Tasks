@@ -1,0 +1,36 @@
+:not(.no-poppins):not(code):not(pre):not(.code-ui) {
+  font-family: 'Poppins', sans-serif;
+}
+.no-poppins {
+  font-family: var(--my-font, sans-serif);
+}
+.code-ui {
+  display: inline-block;
+  background-color: black;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.95rem;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  box-sizing: border-box;
+  color: greenyellow;
+  white-space: normal;
+  vertical-align: middle;
+}
+.Border:not(.no-poppins) {
+  font-family: 'Poppins', sans-serif;
+}
+.Navbar .no-poppins {
+  font-family: var(--my-font, sans-serif);
+}
+body #override-font {
+  font-family: sans-serif !important;
+}
+code, pre {
+  font-family: 'Courier New', Courier, monospace !important;
+}
+.code-ui, .code-ui *, code, pre {
+  font-family: 'Courier New', Courier, monospace !important;
+}
