@@ -1,9 +1,9 @@
 {
-  "name": "react-test-24",
+  "name": "tasks-app",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://EyadHashwa.github.io/CSSTUTORIAL/",
+  "homepage": "https://OnFuture2421.github.io/Tasks/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
